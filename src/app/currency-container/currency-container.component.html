@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange Rate Calculator</title>
+  </head>
+  <body>
+    <img src="../assets/money.png" alt="money-img" class="money-img" />
+    <h1>Exchange Rate Calculator</h1>
+    <p>Choose the currency and the amounts to get the exchange rate</p>
+
+    <div class="container">
+      <app-currency-one (currencyOneValue)="getCurrencyOneValue($event)" (currencyOneInputValue)="getCurrencyOneInputValue($event)" ></app-currency-one>
+      <app-swap-button [rate]="rate" [currencyOne]="currencyOne" [currencyTwo]="currencyTwo" (onSwapCurrencies)="swapCurrencies()"></app-swap-button>
+      <app-currency-two [amountTwo]="+amountTwo" (currencyTwoValue)="getCurrencyTwoValue($event)" ></app-currency-two>
+    </div>
+  </body>
+</html>
